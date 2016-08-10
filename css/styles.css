@@ -1,6 +1,28 @@
-/* line 2, ../compass/sass/styles.scss */
+/* line 1, ../compass/sass/styles.scss */
+body {
+  background-color: #A3CCFF;
+}
+
+/* line 5, ../compass/sass/styles.scss */
 #map {
   height: 99vh;
   width: 75%;
   float: left;
+}
+
+/* line 11, ../compass/sass/styles.scss */
+table {
+  background-color: #FDFDE9;
+  color: black;
+}
+
+/* line 18, ../compass/sass/styles.scss */
+table, td, th {
+  padding: 3px;
+  border: 1px solid black;
+}
+
+/* line 23, ../compass/sass/styles.scss */
+a {
+  color: black;
 }
