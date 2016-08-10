@@ -1,0 +1,11 @@
+
+@import 'configs/variables';
+@import 'components/misc';
+@import 'layout/header';
+@import 'layout/footer';
+
+#map{
+  height:99vh;
+  width:75%;
+  float:left;
+}

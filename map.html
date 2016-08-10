@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="mapApp">
+<head>
+	<title></title>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&v=3.exp&signed_in=true"></script>
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    
+   <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript" src="googleMap.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+
+</head>
+
+<body ng-controller="mapController">
+
+	<div id="map"></div>
+
+
+	<table>
+		<tr ng-repeat="city in cities">
+
+			<td>{{city.yearRank}}</td>
+			<td><a href="" ng-click="triggerClick($index)">{{city.city}}</a></td>
+			<td>{{city.state}}</td>
+
+	</tr>
+
+{{test}}
+
+</body>
+</html>
