@@ -20,14 +20,17 @@ var myLatlng = {lat: 33.363, lng: -84.044};
        	 {
           position:cityLatlng,
           map: map,
-          title: city.city
+          title: city.city,
+          population: city.lastCensus
 
 
         });
 
-
+var infoString=city.city+" Pop:"+city.lastCensus;
 	var infoWindow=new google.maps.InfoWindow({
-		content:city.city
+		content:infoString
+    
+    
 	})
 
 	google.maps.event.addListener(marker,'click',function(){
