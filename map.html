@@ -15,27 +15,72 @@
     <script type="text/javascript" src="googleMap.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     
 
 </head>
 
-<body ng-controller="mapController">
-
+<!-- BODY -->
+<body ng-controller="mapController" ng-cloak>
+<!-- MAP DIV -->
 	<div id="map"></div>
 
-<div class="scrollbar">
-	<table> 
+<!-- SCROLLBAR -->
+
+
+<div id="list-window">
+<!-- UPDATE MARKER -->
+<form ng-submit="updateMarkers()">
+<!-- FILTER INPUT -->
+
+	<md-input-container>
+	        <label>Search</label>
+	        <input ng-model="citiesFilter" type="text" style="color:white">
+	 </md-input-container>
+	      
+<!-- UPDATE AND RESET BUTTONS -->
+	 <md-button class="md-raised " type="submit" value="Update">Update</md-button>
+	 <md-button class="md-raised md-primary" type="submit" value="Reset">Reset</md-button>
+	
+<div>
+	<button type="submit" ng-click="findLocation('shop')">Shops</button>
+	<button type="submit" ng-click="findLocation('bank')">Banks</button>
+	<button type="submit" ng-click="findLocation('hospital')">Hospitals</button>
+</div>
+   <div class="toolbar">
+
+
+    <table> 
 	<h3>U.S. Top Populations</h3>
-		<tr ng-repeat="city in cities">
+		<tr ng-repeat="city in (filteredCities=(cities | filter:citiesFilter)) track by $index">
 
 			<td>{{city.yearRank}}</td>
 			<td><a href="" ng-click="triggerClick($index)">{{city.city}}</a></td>
 			<td>{{city.state}}</td>
-
+			<td><button type="submit" ng-click="getDirections(city.lat,city.lon)">Get destination</button></td>
+			<td><button type="submit" ng-click="zoomToCity(city.lat,city.lon)">Zoom in</button></td>
 	</tr>
 </table>
-</div>
-{{test}}
 
+
+
+
+   
+</div>
+
+	</form>
+
+</div>
+
+
+{{test}}
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 </body>
 </html>
