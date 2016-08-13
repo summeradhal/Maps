@@ -7,9 +7,36 @@ var cities=[];
 
 var apiKey="AIzaSyADdls32BcXTIk2Dkx1dLAHS30Ed7sleqU";
 
+
+
 for(var i=0;i<cities.length;i++){
 	cities[i].push(new City);
 }
+
+//   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+//               <li><a href="#">Airports</a></li>
+//               <li><a href="#">Attractions</a></li>
+//               <li><a href="#">Banks</a></li>
+//               <li><a href="#">Bars</a></li>
+//               <li><a href="#">Bookstores</a></li>
+//               <li><a href="#">Car Dealerships</a></li>
+//               <li><a href="#">Coffee</a></li>
+//               <li><a href="#">Fast Food</a></li>
+//               <li><a href="#">Fire Department</a></li>
+//               <li><a href="#">Grocery Store</a></li>
+//               <li><a href="#">Hospitals</a></li>
+//               <li><a href="#">Hotels</a></li>
+//               <li><a href="#">Libraries</a></li>
+//               <li><a href="#">Museums</a></li>
+//               <li><a href="#">Parking</a></li>
+//               <li><a href="#">Places of Worship</a></li>
+//               <li><a href="#">Restaurants</a></li>
+//               <li><a href="#">Schools</a></li>
+//               <li><a href="#">Shelters</a></li>
+//               <li><a href="#">Shops</a></li>
+//               <li><a href="#">Transit Stations</a></li>  
+//   </ul>
+// </div>
 
 
 

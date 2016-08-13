@@ -49,11 +49,5 @@ a {
   bottom: 5px;
   left: 7px;
   font-size: 14px;
-  opacity: 0.54; }
-
-  HTMLJSCSS
-.toolbardemoScrollShrink {
-  width: 48px;
-  margin: 16px;
-  border-radius: 48px;
-  border: 1px solid #ddd; }
+  opacity: 0.54; 
+}

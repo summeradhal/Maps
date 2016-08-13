@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="mapApp">
 <head>
-	<title></title>
+  <title></title>
 
 
 
@@ -24,7 +24,7 @@
 <!-- BODY -->
 <body ng-controller="mapController" ng-cloak>
 <!-- MAP DIV -->
-	<div id="map"></div>
+  <div id="map"></div>
 
 <!-- SCROLLBAR -->
 
@@ -34,42 +34,47 @@
 <form ng-submit="updateMarkers()">
 <!-- FILTER INPUT -->
 
-	<md-input-container>
-	        <label>Search</label>
-	        <input ng-model="citiesFilter" type="text" style="color:white">
-	 </md-input-container>
-	      
+  <md-input-container>
+          <label>Search</label>
+          <input ng-model="citiesFilter" type="text" style="color:white">
+   </md-input-container>
+        
 <!-- UPDATE AND RESET BUTTONS -->
-	 <md-button class="md-raised " type="submit" value="Update">Update</md-button>
-	 <md-button class="md-raised md-primary" type="submit" value="Reset">Reset</md-button>
-	
-<div>
-	<button type="submit" ng-click="findLocation('shop')">Shops</button>
-	<button type="submit" ng-click="findLocation('bank')">Banks</button>
-	<button type="submit" ng-click="findLocation('hospital')">Hospitals</button>
-</div>
-   <div class="toolbar">
+   <md-button class="md-raised " type="submit" value="Update">Update</md-button>
+   <!-- <md-button class="md-raised md-primary" type="submit" value="Reset">Reset</md-button> -->
+  
 
+
+   
+    <div layout="row">
+      <md-input-container style="margin-right: 10px;">
+        <label>Locations</label>
+        <md-select ng-model="place">
+          <md-option ng-repeat="place in placesSearch" value="{{place}}">{{place}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+      </div>
 
     <table> 
-	<h3>U.S. Top Populations</h3>
-		<tr ng-repeat="city in (filteredCities=(cities | filter:citiesFilter)) track by $index">
+  <h3>U.S. Top Populations</h3>
+    <tr ng-repeat="city in (filteredCities=(cities | filter:citiesFilter)) track by $index">
 
-			<td>{{city.yearRank}}</td>
-			<td><a href="" ng-click="triggerClick($index)">{{city.city}}</a></td>
-			<td>{{city.state}}</td>
-			<td><button type="submit" ng-click="getDirections(city.lat,city.lon)">Get destination</button></td>
-			<td><button type="submit" ng-click="zoomToCity(city.lat,city.lon)">Zoom in</button></td>
-	</tr>
+      <td>{{city.yearRank}}</td>
+      <td><a href="" ng-click="triggerClick($index)">{{city.city}}</a></td>
+      <td>{{city.state}}</td>
+      <td><button type="submit" ng-click="getDirections(city.lat,city.lon)">Get destination</button></td>
+      <td><button type="submit" ng-click="zoomToCity(city.lat,city.lon)">Zoom in</button></td>
+  </tr>
 </table>
 
 
 
 
    
-</div>
 
-	</form>
+
+  </form>
 
 </div>
 

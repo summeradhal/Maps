@@ -1,16 +1,59 @@
 var mapApp=angular.module('mapApp',['ngMaterial']);
 mapApp.controller('mapController',function($scope,$http){
 
-
 $scope.filteredCities='';
 
 
   $scope.title1 = 'Button';
   $scope.title4 = 'Warn';
   $scope.isDisabled = true;
-  $scope.googleUrl = 'http://google.com';
+
+
+  // function querySearch (query) {
+  //     var results = query ? self.states.filter( createFilterFor(query) ) : self.states,
+  //         deferred;
+  //     if (self.simulateQuery) {
+  //       deferred = $q.defer();
+  //       $timeout(function () { deferred.resolve( results ); }, Math.random() * 1000, false);
+  //       return deferred.promise;
+  //     } else {
+  //       return results;
+  //     }
+  //   }
+
+ //    placesSearch.push('airports');
+ // placesSearch.push('attractions');
+ // placesSearch.push('banks');
+ // placesSearch.push('bars');
+ // placesSearch.push('bookstores');
+ // placesSearch.push('cardealerships');
+ // placesSearch.push('coffee');
+ // placesSearch.push('fastfood');
+ // placesSearch.push('firedepartment');
+ // placesSearch.push('grocery');
+ // placesSearch.push('hospital');
+ // placesSearch.push('hotel');
+ // placesSearch.push('libraries');
+ // placesSearch.push('museums');
+ // placesSearch.push('parking');
+ // placesSearch.push('worship');
+ // placesSearch.push('restaurants');
+ // placesSearch.push('school');
+ // placesSearch.push('shelter');
+ // placesSearch.push('shops');
+ // placesSearch.push('transit');
+
+
+$scope.placesSearch=[
+'airports','attractions','banks','bars','bookstores','cardealerships','coffee','fastfood','firedepartment','grocery','hospital','hotel',
+'libraries','museums','parking','worship','restaurants','school','shelter','shops','transit'
+];
+
+
 
  
+
+
 
 var myLatlng = {lat: 33.363, lng: -84.044};
        var map = new google.maps.Map(document.getElementById('map'), {
@@ -125,7 +168,7 @@ $scope.zoomToCity=function(lat,lon,location){
     service.nearbySearch({
       location: cityLatLon,
       radius:500,
-      type:location
+      type:$scope.place
     },callback);
 
 
